@@ -1,2 +1,0 @@
-export const COMPANY_FILTER_APPLY = 'PartnerOptions/COMPANY_FILTER_APPLY'
-export const COMPANY_FILTER_CHANGE = 'PartnerOptions/COMPANY_FILTER_CHANGE'
