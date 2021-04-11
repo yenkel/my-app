@@ -1,0 +1,16 @@
+// Currently Ant-d doesn't have a way to import styles per component in use.
+// This hack allow us to wrap whole Atn-d styles (to prevent overriding) into our class to use.
+// Issue here that it brings many unused styles.
+// Has to be removed on the way with https://github.com/ant-design/ant-design/issues/9363
+
+.is-antd { 
+  @import 'antd/dist/antd.less';
+}
+
+.is-antd-select-container {
+  display: inline-block;
+  .is-antd-select {
+    width: 200px;
+    text-align: left;
+  }
+}

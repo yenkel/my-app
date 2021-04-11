@@ -1,0 +1,233 @@
+@import './vendors.styl'
+@import './theme.styl'
+
+@import './components/card.styl'
+@import './components/checkbox.styl'
+@import './components/menu.styl'
+@import './components/table.styl'
+
+.border-line
+  border-bottom: solid 1px #bcd5e2
+.border-line-gray
+  border-bottom: solid 1px $gray
+img
+  user-select: none
+  &.empty-box
+    width: 120px
+    display: block
+    margin: 50px auto 25px auto
+.root
+  position: absolute
+  top: $navigationHeight
+  bottom: 0
+  right: 0
+  left: 0
+  & > .content-container
+    width: 80%
+    margin: $baseMargin auto
+  & > .content-container-with-menu
+    @media screen and (max-width: $rcTabletPoint)
+      height: "calc(100% - %s)" % $navigationHeight // size of mobile menu
+      margin: 0
+    height: 100%
+    padding: $baseMargin
+    margin-left: 247px
+    .partner-companyFilter
+      width: 200px
+      margin-bottom: $baseMargin
+
+@supports (-webkit-touch-callout: none)
+  .partner-companyFilter input#companies_select
+    font-size: 16px !important
+.dfi
+  display: flex !important
+.dots
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+.flex-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  align-content: center
+
+.ha
+  height: auto
+.cd
+  cursor: default !important
+.bni
+  border: none !important
+.cp
+  cursor: pointer
+.cdi
+  cursor: default !important
+.cb
+  clear: both
+.lh-1
+  line-height: 1
+.p-10
+  padding: 10px
+.p-20
+  padding: 20px
+.pt-20
+  padding-top: 20px
+.pti-20
+  padding-top: 20px !important
+.pti-60
+  padding-top: 60px !important
+.pz
+  padding: 0 !important
+.pzi
+  padding: 0 !important
+.usn
+  user-select: none
+.fr
+  float: right
+.fl
+  float: left
+.oh
+  overflow: hidden !important
+.tb
+  font-weight: bold
+.tal
+  text-align: left
+.tac
+  text-align: center
+.tar
+  text-align: right
+.dn
+  display: none
+.dni
+  display: none !important
+.dn-pdf
+  position: absolute
+  left: -9999px
+.mt
+  margin-top: $baseMargin
+.mr
+  margin-right: $baseMargin
+.mr10
+  margin-right: 10px
+.ml
+  margin-left: $baseMargin
+.sml
+  margin-left: ($baseMargin / 3)
+.smr
+  margin-right: ($baseMargin / 3)
+.mb
+  margin-bottom: $baseMargin
+.mb-5
+  margin-bottom: 5px
+.mb-10
+  margin-bottom: 10px
+.mbz
+  margin-bottom: 0
+.mbzi
+  margin-bottom: 0 !important
+.mtz
+  margin-top: 0
+.mz
+  margin: 0
+.mzi
+  margin: 0 !important
+ .mtb-10
+  margin: 10px 0
+ .mtb-20
+  margin: 20px 0
+.b
+  font-weight: bold
+.sb
+  font-weight: 600
+.bp
+  padding: $baseMargin
+.br-r
+  border: 1px solid red
+.br-g
+  border: 1px solid green
+.br-b
+  border: 1px solid blue
+.br-blk
+  border: 1px solid black
+.brr
+  border-right: 1px solid #CACACA
+.df
+  display: flex
+.fone
+  flex: 1
+.aic
+  align-items: center
+.cap
+  text-transform: capitalize
+.upper
+  text-transform: uppercase
+.lower
+  text-transform: lowercase
+.orange
+  color: orange
+.blue
+  color: $primaryColor
+.dib-vac
+  display: inline-block
+  vertical-align: middle
+.pr
+  position: relative
+.db
+  display: block
+.vat
+  vertical-align: top !important
+.fss
+  font-size: 0.8em
+.ptz
+  padding-top: 0 !important
+.plz
+  padding-left: 0 !important
+.link-color
+  color: $secondaryColor
+.o0
+  opacity: 0
+.white
+  color: white
+.grey
+  color: #A0A0A0
+.ma
+  margin: auto
+.rtl
+  direction: rtl
+.pc
+  color: $primaryColor
+.ws
+  white-space: normal
+.w15
+  width: 15px
+.w18
+  width: 18px
+.w20
+  width: 20px
+.wa
+  width: auto !important
+.red-counter-badge
+  width: 37px
+  margin-right: 10px
+  & span:first-child
+    border: none
+    margin-left: 0
+.secondary-label
+  background: $secondaryColor
+  border-radius: 4px
+  color: white
+  font-weight: 600
+  font-size: 12px
+  min-height: 16px
+  text-align: center
+
+.gt-p // great than Phone
+  @media screen and (max-width: $rcPhonePoint)
+    display: none !important
+
+.lt-p // less than Phone
+  @media screen and (min-width: $rcPhonePoint)
+    display: none !important
+
+.lt-rc-src
+  @media screen and (max-width: $rcStackRowCards)
+    display: none !important

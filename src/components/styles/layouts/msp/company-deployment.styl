@@ -1,0 +1,44 @@
+@import '../../theme.styl'
+
+.company-deployment
+  height: 100%
+  padding: $cardPadding
+  background-color: white
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1)
+  border-radius: 10px
+  position: relative
+  h3.title
+    color: $primaryColor
+    margin: 0 0 5px 0
+    font-size: 18px
+    font-weight: bold
+    line-height: normal
+    text-transform: uppercase
+    & > span
+      font-weight: normal
+      text-transform: none
+  .ui-row
+    padding: 3px 0
+    & > *
+      display: inline-block
+      vertical-align: middle
+      width: 50%
+      &:last-child
+        text-align: right
+        font-weight: bold
+  .value
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    & > *
+      text-align: center
+      &.data
+        color: $primaryColor
+        font-size: 44px
+        &.big
+          font-size: 66px
+      &.detail
+        color: $gray
+        font-size: 14px

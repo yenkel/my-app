@@ -1,0 +1,208 @@
+@import '../theme.styl'
+
+.is-table-header-c
+  color: white
+  font-weight: bold
+  background-color: #08314d
+  text-align: center
+
+.is-table
+  height: auto
+  min-height: ("calc(100vh - %s - 30px)" % $navigationHeight)
+  overflow: hidden
+  @media screen and (max-width: $rcPhonePoint)
+    th, td
+      display: block !important
+  &.paginated
+    // 77px its height of Paginator component (47px) + 2 baseMargins (by 15px)
+    min-height: ("calc(100vh - %s - 77px)" % $navigationHeight)
+    margin-bottom: $baseMargin
+  .select-all-container > .is-popup-content
+    color: #999999
+    top: 65px !important
+    left: auto !important
+    width: auto !important
+    font-size: 13px
+    text-align: left
+    padding: 15px !important
+    border: none !important
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important
+    border-radius: 10px
+    @media screen and (max-width: 1389px)
+      top: 100px !important
+    @media screen and (max-width: 711px)
+      top: 135px !important
+    div:first-child
+      top: auto !important
+      left: 21px !important
+      bottom: 0 !important
+      transform: rotate(45deg) !important
+    .select-all-popup-action
+      color: $primaryColor
+      text-decoration: underline
+      cursor: pointer
+      &:hover
+        background-color: $contrastLightColor
+  .is-table-button
+    color: gray
+    height: 36px
+    padding: 0 20px
+    display: inline-block
+    border-radius: 5px
+    vertical-align: top
+    cursor: pointer
+    background-color: white
+    border: 1px solid #999999
+    user-select: none
+    &.is-checkbox-counter
+      padding: 6px 10px
+      position: relative
+      &.disabled
+        .disabled-container
+          display: block
+      &.highlight
+        color: white
+        background-color: $primaryColor
+        .is-checkbox
+          .checkbox-checkbox
+            &:hover
+              .checkmark
+                &::after
+                  opacity: 0.7
+              input ~ .checkmark
+                background-color: transparent !important
+            .checkmark
+              border-color: white
+              &::after
+                border-color: white
+      .disabled-container
+        display: none
+        position: absolute
+        top: -5px
+        left: -5px
+        right: -5px
+        bottom: -5px
+        background: white
+        z-index: 1
+        opacity: 0.7
+  .is-table-header
+    padding: $baseMargin
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1)
+    text-align: right
+    & > div:first-child
+      margin-bottom: $baseMargin
+    a.csv-button
+      display: inline-block
+    .is-search-field
+      max-width: 250px
+      float: left
+  .is-table-message
+    margin: 15px 15px 0 15px
+    padding: 15px
+    text-align: center
+    font-weight: bold
+    border-radius: 10px
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1)
+    &.error
+      color: $red
+  .is-table-content
+    padding: $baseMargin
+    min-height: 100%
+    table
+      width: 100%
+      table-layout: fixed
+      border-collapse: collapse
+      thead
+        color: $primaryColor
+        th
+          padding: 0 0 10px 10px
+          overflow: hidden
+      tbody
+        tr
+          color: $primaryColor
+          &:nth-child(odd)
+            background-color: #F4F4F4
+          &.loader
+            td
+              display: none
+              &.is-table-loader-container
+                height: 45px
+                display: table-cell
+                padding: 0
+                overflow: hidden
+                .loader-container
+                  .loader
+                    top: calc(50% - 10px)
+                    left: calc(50% + 13.5px)
+          td
+            padding: 10px
+            word-wrap: break-word
+            overflow-wrap: break-word
+            transition: 0.3s linear all
+            img, a
+              cursor: pointer
+              vertical-align: middle
+              margin-right: 15px
+              width: 20px
+              height: 20px
+          .is-table-loader-container
+            display: none
+      .is-last
+        opacity: 0.5
+      .show-all-affected-mailboxes
+        cursor: pointer
+        font-size: 600
+        background-color: $secondaryColor
+        border-radius: 27px
+        font-size: 12px
+        padding: 5px 16px
+        color: white
+        position: absolute
+        left: calc(50% - 95px)
+        bottom: 10px
+    .is-table-loader
+      margin-top: 100px
+
+table.is-table-pdf
+  table-layout: fixed
+
+table.is-table-pdf > tbody > tr > td + td
+  border-left-width: 0
+
+table.is-table-pdf > tbody > tr  +tr > td
+  border-top-width: 0
+
+table.is-table-pdf
+  width: 100%
+  font-size: 8px
+  td
+    padding: 10px
+    border: 1px solid black
+
+.pdf-mitigation-blocks
+  font-size: 8px
+  .p
+    padding: 10px
+  .fvc
+    display: flex
+    justify-content: center
+    flex-direction: column
+  *
+    border: 1px solid black
+  & > div
+    margin-bottom: 10px
+    display: flex
+    justify-content: stretch
+    align-items: stretch
+    &:last-child
+      margin-bottom: 0
+    & > div
+      width: 30%
+      &:last-child
+        width: 70%
+  .value-row
+    display: flex
+    justify-content: stretch
+    align-items: stretch
+    & > div
+      width: 50%

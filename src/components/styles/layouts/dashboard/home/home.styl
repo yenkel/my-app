@@ -1,0 +1,94 @@
+@import '../../../theme.styl'
+
+.dashboard-layout
+  height: 100%
+  min-height: 760px
+  & > *
+    height: 100%
+    display: inline-block
+    vertical-align: top
+  .sb-banner
+    height: 40px
+    text-align: center
+    width: 100%
+    margin-bottom: 19px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0 1em
+  .progress
+      background: #FFEEC3
+  .finish
+      background: #DBF8BE
+  .upper-side
+    height: 300px
+    display: block !important
+  .lower-side
+    height: calc(100% - 315px)
+    display: block !important
+    .heartbeat-container
+      height: 100%
+      width: 25%
+      display: inline-block
+      vertical-align: top
+      @media screen and (max-width: 1435px)
+        width: 305px
+
+.new-button-style
+  font-size: 12px
+  border-color: #EBEBEB
+  padding: 8px 16px
+  &.disabled
+    opacity: 0.5
+    pointer-events: none
+
+.title-header
+  text-transform: uppercase
+  text-align: center
+  padding-top: 15px
+  font-weight: 600
+  color: $primaryColor
+
+.info-icon
+  width: 15px !important
+  height: 15px !important
+  margin-left: 7px
+  margin-bottom: 1px
+
+.separator
+  height: 1px
+  width: 100%
+  background-color: #EBEBEB
+
+.status-indication
+  width: 8px
+  height: 8px
+  display: inline-block
+  border-radius: 4px
+  &.active-green
+    background-color: #6DD400
+  &.inactive-red
+    background-color: #F83A32
+  &.primary-blue
+    background-color: $primaryColor
+
+.no-license-container
+  text-align: center
+  height: 100%
+  img
+    width: 36px !important
+    height: 36px !important
+    margin: 20px 0 15px 0
+    @media screen and (max-width: 1150px)
+      margin: 5px 0
+  .first-text
+    font-size: 12px
+    color: $primaryColor
+    font-weight: bold
+  .second-text
+    height: calc(100% - 180px)
+    font-size: 12px
+    color: #565B6D
+    padding: 15px 40px
+    @media screen and (max-width: 1350px)
+      padding: 15px

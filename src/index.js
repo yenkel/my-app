@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import 'rxjs'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import * as Sentry from '@sentry/browser'
+
+import configureStore from './store'
+
+import RootContainer from './components/RootContainer'
+import '../webpack-es6-public-path'
+
+const store = configureStore()
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <Provider store={store}>
+    <RootContainer store={store} />
+  </Provider>,
+  document.getElementById('app'),
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export const initSentry = (env) => {
+  Sentry.init({
+    dsn: 'https://266f73f01f09432ebf01138bd5f050e6@o86130.ingest.sentry.io/1259170',
+    release: GIT_VERSION,
+    environment: env,
+    beforeSend(event) {
+      console.log(event)
+      if (env === 'ONPREMISE' || window.DISABLE_SENTRY) return null
+      else return event
+    },
+  })
+
+  window.SENTRY_INITIALIZED = true
+}
